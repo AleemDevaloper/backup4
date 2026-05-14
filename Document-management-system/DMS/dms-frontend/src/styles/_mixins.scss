@@ -1,0 +1,183 @@
+// Mixins for common styles
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card-shadow {
+  box-shadow: $shadow;
+  transition: $transition;
+}
+
+@mixin card-shadow-hover {
+  box-shadow: $shadow-lg;
+  transform: translateY(-2px);
+  transition: $transition;
+}
+
+@mixin button-base {
+  border: none;
+  border-radius: $radius;
+  padding: 0.625rem 1.25rem;
+  font-size: $body-size;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: $transition;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: $gradient-primary;
+  color: white;
+  box-shadow: $shadow;
+
+  &:hover {
+    background: $gradient-primary;
+    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background: white;
+  color: $text-primary;
+  border: 1px solid $border;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    background: $background;
+    box-shadow: $shadow;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin button-success {
+  @include button-base;
+  background: $gradient-success;
+  color: white;
+  box-shadow: $shadow;
+
+  &:hover {
+    background: $gradient-success;
+    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+  }
+}
+
+@mixin button-danger {
+  @include button-base;
+  background: $gradient-danger;
+  color: white;
+  box-shadow: $shadow;
+
+  &:hover {
+    background: $gradient-danger;
+    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+  }
+}
+
+@mixin icon-beautiful {
+  font-size: 1.25rem;
+  color: $primary;
+  transition: $transition;
+
+  &:hover {
+    color: $secondary;
+    transform: scale(1.1);
+  }
+}
+
+@mixin card-beautiful {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: $radius-lg;
+  box-shadow: var(--shadow);
+  transition: $transition;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+}
+
+@mixin input-beautiful {
+  border: 2px solid var(--border);
+  border-radius: $radius;
+  padding: 0.75rem 1rem;
+  font-size: $body-size;
+  transition: $transition;
+  background: var(--card-bg);
+  color: var(--text-primary);
+
+  &:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+}
+
+@mixin navbar-beautiful {
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--background) 100%);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+@mixin sidebar-beautiful {
+  background: linear-gradient(180deg, var(--card-bg) 0%, var(--background) 100%);
+  border-right: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+@mixin badge-beautiful {
+  border-radius: $radius-xl;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  font-size: $small-size;
+}

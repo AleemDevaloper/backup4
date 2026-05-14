@@ -1,0 +1,35 @@
+// Custom Bootstrap overrides
+
+// Override Bootstrap variables
+$primary: #2828e2;
+$secondary: #373a9e;
+$light: #F9FAFB;
+$white: #FFFFFF;
+$dark: #111827;
+$gray-600: #6B7280;
+$border-color: #E5E7EB;
+$success: #10B981;
+$danger: #EF4444;
+
+// Typography
+$font-family-sans-serif: 'Inter', sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+// Headings
+$h1-font-size: 1.75rem;
+$h2-font-size: 1.375rem;
+$h3-font-size: 1.125rem;
+$font-size-base: 0.875rem;
+$small-font-size: 0.75rem;
+
+// Import Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Custom heading font
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+

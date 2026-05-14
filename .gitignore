@@ -1,0 +1,25 @@
+# Dependencies
+**/node_modules/
+**/vendor/
+
+# Environment files
+**/.env
+**/.env.backup
+**/.env.production
+
+# Laravel specific
+**/storage/*.key
+**/storage/framework/cache/data/*
+**/storage/framework/sessions/*
+**/storage/framework/testing/*
+**/storage/framework/views/*
+**/storage/logs/*
+**/bootstrap/cache/*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Archives (Optional - remove if you want to push them)
+# DMS.rar
+# PMS for internal/PMS.zip
